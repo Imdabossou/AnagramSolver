@@ -253,6 +253,12 @@ const STATE_KEY = 'anagram-solver-state';
 function saveState() {
   try {
     localStorage.setItem(STATE_KEY, JSON.stringify({ mode, dict: els.dict.value, sort: els.sort.value }));
+$('search').addEventListener('submit', (ev) => {
+  ev.preventDefault();
+  clearTimeout(timer);
+  run();
+  document.activeElement?.blur();
+});
   } catch { /* storage unavailable */ }
 }
 function loadState() {
@@ -267,6 +273,14 @@ function loadState() {
 }
 
 els.letters.addEventListener('input', scheduleRun);
+// Enter runs the search straight away and closes the on-screen keyboard.
+[els.letters, els.starts, els.contains, els.ends].forEach((e) => e.addEventListener('keydown', (ev) => {
+  if (ev.key !== 'Enter') return;
+  ev.preventDefault();
+  clearTimeout(timer);
+  run();
+  e.blur();
+}));
 [els.starts, els.contains, els.ends].forEach((e) => e.addEventListener('input', scheduleRun));
 [els.dict, els.sort, els.length, els.exact].forEach((e) => e.addEventListener('change', run));
 els.clear.addEventListener('click', () => {

@@ -78,6 +78,7 @@ main { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 16px 24px; flex
   color: var(--text);
   outline: none;
 }
+#letters::-webkit-search-cancel-button { display: none; }
 #letters:focus { border-color: var(--accent); }
 #letters::placeholder { letter-spacing: normal; text-transform: none; font-size: 1rem; color: var(--muted); }
 .icon-btn {

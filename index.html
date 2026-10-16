@@ -21,10 +21,10 @@
       <button role="tab" class="tab" data-mode="pattern" aria-selected="false">Crossword pattern</button>
     </nav>
 
-    <form id="search" autocomplete="off" onsubmit="return false">
+    <form id="search" autocomplete="off">
       <label class="main-input">
         <span class="sr-only" id="input-label">Letters</span>
-        <input id="letters" type="text" inputmode="text" autocapitalize="characters"
+        <input id="letters" type="search" inputmode="text" enterkeyhint="search" autocapitalize="characters"
                spellcheck="false" maxlength="20" placeholder="Enter letters, ? for blank" aria-labelledby="input-label">
         <button type="button" id="clear" class="icon-btn" aria-label="Clear">&times;</button>
       </label>
@@ -46,15 +46,16 @@
               <option value="alpha">A–Z</option>
             </select>
           </label>
-          <label class="anagram-only">Starts with <input id="starts" type="text" maxlength="10" spellcheck="false"></label>
-          <label class="anagram-only">Contains <input id="contains" type="text" maxlength="10" spellcheck="false"></label>
-          <label class="anagram-only">Ends with <input id="ends" type="text" maxlength="10" spellcheck="false"></label>
+          <label class="anagram-only">Starts with <input id="starts" type="text" enterkeyhint="done" maxlength="10" spellcheck="false"></label>
+          <label class="anagram-only">Contains <input id="contains" type="text" enterkeyhint="done" maxlength="10" spellcheck="false"></label>
+          <label class="anagram-only">Ends with <input id="ends" type="text" enterkeyhint="done" maxlength="10" spellcheck="false"></label>
           <label class="anagram-only">Length
             <select id="length"><option value="">Any</option></select>
           </label>
           <label class="check anagram-only"><input id="exact" type="checkbox"> Use all letters only</label>
         </div>
       </details>
+      <button type="submit" hidden></button>
     </form>
 
     <p id="status" class="status" aria-live="polite">Loading dictionary…</p>
