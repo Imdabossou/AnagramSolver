@@ -13,6 +13,12 @@ Word lists (`words/`, regenerate with `tools/build-words.sh`):
 - `scrabble.txt`: ENABLE (public domain), 173k words.
 - `british.txt`: SCOWL British English from Arch's `words` package, lowercase a–z only.
 
-## Run the LAN preview
+## Run locally
 
-    docker compose up -d     # http://<host>:8090
+    docker compose up -d     # http://localhost:8090
+
+## Deploying
+
+It's a static site: serve the files from any web server or static host. `nginx.conf` is the
+config used by `compose.yaml`; it sends `Cache-Control: no-cache, no-transform` so browsers pick
+up updates and CDNs don't rewrite the page or its scripts.
