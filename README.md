@@ -1,0 +1,18 @@
+# Anagram Solver
+
+Ad-free anagram solver / word unscrambler. Plain static HTML/CSS/JS, no build step,
+all searching happens in the browser so it works offline (and can be wrapped as an Android app).
+
+- **Unscramble**: every word buildable from your letters, `?` or space = blank tile
+  (blank letters shown underlined, scored 0). Words using every letter are highlighted.
+- **Crossword pattern**: `?` = one letter, `*` = any run of letters.
+- Filters: starts with / contains / ends with, length, use-all-letters; sort by length, score or A–Z.
+- Tap a word to open its Wiktionary definition.
+
+Word lists (`words/`, regenerate with `tools/build-words.sh`):
+- `scrabble.txt`: ENABLE (public domain), 173k words.
+- `british.txt`: SCOWL British English from Arch's `words` package, lowercase a–z only.
+
+## Run the LAN preview
+
+    docker compose up -d     # http://<host>:8090

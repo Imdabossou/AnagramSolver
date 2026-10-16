@@ -1,0 +1,13 @@
+{
+  "name": "Anagram Solver",
+  "short_name": "Anagrams",
+  "description": "Fast, ad-free anagram solver and word unscrambler.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f4ef",
+  "theme_color": "#2f6f5e",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2f6f5e">
+  <meta name="description" content="Fast, ad-free anagram solver and word unscrambler.">
+  <title>Anagram Solver</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1><span class="tile">A</span>nagram Solver</h1>
+  </header>
+
+  <main>
+    <nav class="tabs" role="tablist">
+      <button role="tab" class="tab active" data-mode="anagram" aria-selected="true">Unscramble</button>
+      <button role="tab" class="tab" data-mode="pattern" aria-selected="false">Crossword pattern</button>
+    </nav>
+
+    <form id="search" autocomplete="off" onsubmit="return false">
+      <label class="main-input">
+        <span class="sr-only" id="input-label">Letters</span>
+        <input id="letters" type="text" inputmode="text" autocapitalize="characters"
+               spellcheck="false" maxlength="20" placeholder="Enter letters, ? for blank" aria-labelledby="input-label">
+        <button type="button" id="clear" class="icon-btn" aria-label="Clear">&times;</button>
+      </label>
+      <p class="hint" id="hint">Use <kbd>?</kbd> or space for a blank tile.</p>
+
+      <details class="filters">
+        <summary>Filters &amp; options</summary>
+        <div class="grid">
+          <label>Dictionary
+            <select id="dict">
+              <option value="scrabble">Scrabble words (ENABLE, 173k)</option>
+              <option value="british">British English (81k)</option>
+            </select>
+          </label>
+          <label>Sort by
+            <select id="sort">
+              <option value="length">Length</option>
+              <option value="score">Scrabble score</option>
+              <option value="alpha">A–Z</option>
+            </select>
+          </label>
+          <label class="anagram-only">Starts with <input id="starts" type="text" maxlength="10" spellcheck="false"></label>
+          <label class="anagram-only">Contains <input id="contains" type="text" maxlength="10" spellcheck="false"></label>
+          <label class="anagram-only">Ends with <input id="ends" type="text" maxlength="10" spellcheck="false"></label>
+          <label class="anagram-only">Length
+            <select id="length"><option value="">Any</option></select>
+          </label>
+          <label class="check anagram-only"><input id="exact" type="checkbox"> Use all letters only</label>
+        </div>
+      </details>
+    </form>
+
+    <p id="status" class="status" aria-live="polite">Loading dictionary…</p>
+    <section id="results" class="results"></section>
+  </main>
+
+  <footer class="foot">
+    No ads, no tracking. Word lists: ENABLE (public domain), SCOWL British English.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
