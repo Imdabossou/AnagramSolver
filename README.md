@@ -9,6 +9,17 @@ all searching happens in the browser so it works offline (and can be wrapped as 
 - Filters: starts with / contains / ends with, length, use-all-letters; sort by length, score or A–Z.
 - Tap a word to open its Wiktionary definition.
 
+## Screenshots
+
+![Unscrambling LISTEN? with a blank tile](screenshots/desktop-unscramble.png)
+
+![Filters open, sorted by Scrabble score](screenshots/desktop-filters.png)
+
+<p>
+  <img src="screenshots/mobile-dark.png" alt="Phone layout in dark mode" width="300">
+  <img src="screenshots/mobile-pattern.png" alt="Crossword pattern search on a phone" width="300">
+</p>
+
 Word lists (`words/`, regenerate with `tools/build-words.sh`):
 - `scrabble.txt`: ENABLE (public domain), 173k words.
 - `british.txt`: SCOWL British English from Arch's `words` package, lowercase a–z only.
