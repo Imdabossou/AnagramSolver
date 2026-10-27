@@ -1,6 +1,4 @@
-# Anagram Solver
-
-<img src="icon.svg" width="128" alt="Anagram Solver icon">
+# <img src="icon.svg" width="36" align="top" alt=""> Anagram Solver
 
 Ad-free anagram solver / word unscrambler. Plain static HTML/CSS/JS, no build step,
 all searching happens in the browser so it works offline (and can be wrapped as an Android app).
