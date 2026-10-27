@@ -1,0 +1,36 @@
+# Checks every push to main and development, and every pull request.
+name: CI
+
+on:
+  push:
+    branches: [main, development]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: JavaScript and manifest parse
+        run: |
+          node --check app.js
+          node --check sw.js
+          jq empty manifest.webmanifest
+      - run: shellcheck -S error tools/build-words.sh
+      - name: Site serves through nginx
+        run: |
+          docker compose up -d
+          for i in $(seq 20); do curl -fsS -o /dev/null http://localhost:8090/ && break; sleep 1; done
+          for p in / /app.js /manifest.webmanifest /words/scrabble.txt /words/british.txt; do
+            curl -fsS -o /dev/null -w "%{http_code} $p\n" "http://localhost:8090$p"
+          done
+      - if: always()
+        run: docker compose down
