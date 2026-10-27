@@ -33,3 +33,9 @@ Word lists (`words/`, regenerate with `tools/build-words.sh`):
 It's a static site: serve the files from any web server or static host. `nginx.conf` is the
 config used by `compose.yaml`; it sends `Cache-Control: no-cache, no-transform` so browsers pick
 up updates and CDNs don't rewrite the page or its scripts.
+
+## Licence
+
+AnagramSolver is free software under the [GNU Affero General Public License v3.0 or later](LICENSE) (AGPL-3.0-or-later).
+You can use, change and share it, including commercially. If you share a changed version, or run one as a service
+that other people use over a network, you must make its source code available under the same licence.
