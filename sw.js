@@ -1,7 +1,7 @@
 // Offline support: app files are network-first (so updates show up straight away),
 // word lists are cache-first (large and rarely change). Bump VERSION when word lists change.
-const VERSION = 'v2';
-const FILES = ['./', 'index.html', 'style.css', 'app.js', 'icon.svg', 'manifest.webmanifest',
+const VERSION = 'v3';
+const FILES = ['./', 'index.html', 'style.css', 'app.js', 'theme.js', 'icon.svg', 'manifest.webmanifest',
   'words/scrabble.txt', 'words/british.txt'];
 
 self.addEventListener('install', (e) => {
