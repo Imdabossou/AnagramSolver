@@ -1,41 +1,37 @@
 # <img src="icon.svg" width="36" align="top" alt=""> Anagram Solver
 
-Ad-free anagram solver / word unscrambler. Plain static HTML/CSS/JS, no build step,
-all searching happens in the browser so it works offline (and can be wrapped as an Android app).
+**An ad-free word unscrambler and crossword helper.**
 
-- **Unscramble**: every word buildable from your letters, `?` or space = blank tile
-  (blank letters shown underlined, scored 0). Words using every letter are highlighted.
-- **Crossword pattern**: `?` = one letter, `*` = any run of letters.
-- Filters: starts with / contains / ends with, length, use-all-letters; sort by length, score or A–Z.
-- Tap a word to open its Wiktionary definition.
-
-## Screenshots
+Type your letters and see every word you can make. No ads, no tracking, and it works offline once loaded, because all the searching happens in your browser.
 
 ![Unscrambling LISTEN? with a blank tile](screenshots/desktop-unscramble.png)
 
-![Filters open, sorted by Scrabble score](screenshots/desktop-filters.png)
+## Features
+
+- **Unscramble letters**: every word you can build, with `?` or a space as a blank tile
+- **Crossword patterns**: `?` for one letter, `*` for any run of letters
+- **Filters**: starts with, contains, ends with, length, and use all letters
+- **Sort** by length, Scrabble score or A–Z
+- **Definitions**: tap a word to look it up on Wiktionary
+- **Two word lists**: Scrabble (ENABLE) or British English
+- **Works on phones**, in light or dark, and can be installed as an app
 
 <p>
-  <img src="screenshots/mobile-dark.png" alt="Phone layout in dark mode" width="300">
-  <img src="screenshots/mobile-pattern.png" alt="Crossword pattern search on a phone" width="300">
+  <img src="screenshots/desktop-filters.png" width="430" alt="Filters open, sorted by Scrabble score">
+  <img src="screenshots/mobile-dark.png" width="160" alt="Phone layout in dark mode">
+  <img src="screenshots/mobile-pattern.png" width="160" alt="Crossword pattern search on a phone">
 </p>
 
-Word lists (`words/`, regenerate with `tools/build-words.sh`):
-- `scrabble.txt`: ENABLE (public domain), 173k words.
-- `british.txt`: SCOWL British English from Arch's `words` package, lowercase a–z only.
+## Get it
 
-## Run locally
+It's a static website, so host the files on any web server. To run it on your own computer with Docker:
 
-    docker compose up -d     # http://localhost:8090
+```sh
+docker compose up -d     # then open http://localhost:8090
+```
 
-## Deploying
-
-It's a static site: serve the files from any web server or static host. `nginx.conf` is the
-config used by `compose.yaml`; it sends `Cache-Control: no-cache, no-transform` so browsers pick
-up updates and CDNs don't rewrite the page or its scripts.
+An Android app is planned.
 
 ## Licence
 
-AnagramSolver is free software under the [GNU Affero General Public License v3.0 or later](LICENSE) (AGPL-3.0-or-later).
-You can use, change and share it, including commercially. If you share a changed version, or run one as a service
-that other people use over a network, you must make its source code available under the same licence.
+Free and open source under the [GNU AGPL v3 or later](LICENSE). Want to work on it? See [BUILDING.md](BUILDING.md).
