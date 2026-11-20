@@ -9,6 +9,7 @@ services:
       - ./index.html:/usr/share/nginx/html/index.html:ro
       - ./style.css:/usr/share/nginx/html/style.css:ro
       - ./app.js:/usr/share/nginx/html/app.js:ro
+      - ./theme.js:/usr/share/nginx/html/theme.js:ro
       - ./sw.js:/usr/share/nginx/html/sw.js:ro
       - ./icon.svg:/usr/share/nginx/html/icon.svg:ro
       - ./manifest.webmanifest:/usr/share/nginx/html/manifest.webmanifest:ro

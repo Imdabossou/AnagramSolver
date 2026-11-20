@@ -23,13 +23,14 @@ jobs:
         run: |
           node --check app.js
           node --check sw.js
+          node --check theme.js
           jq empty manifest.webmanifest
       - run: shellcheck -S error tools/build-words.sh
       - name: Site serves through nginx
         run: |
           docker compose up -d
           for i in $(seq 20); do curl -fsS -o /dev/null http://localhost:8090/ && break; sleep 1; done
-          for p in / /app.js /manifest.webmanifest /words/scrabble.txt /words/british.txt; do
+          for p in / /app.js /theme.js /sw.js /style.css /manifest.webmanifest /words/scrabble.txt /words/british.txt; do
             curl -fsS -o /dev/null -w "%{http_code} $p\n" "http://localhost:8090$p"
           done
       - if: always()
