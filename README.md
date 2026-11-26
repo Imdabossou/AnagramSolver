@@ -21,6 +21,7 @@ Type your letters and see every word you can make. No ads, no tracking, and it w
   <img src="screenshots/desktop-filters.png" width="430" alt="Filters open, sorted by Scrabble score">
   <img src="screenshots/mobile-dark.png" width="160" alt="Phone layout in dark mode">
   <img src="screenshots/mobile-pattern.png" width="160" alt="Crossword pattern search on a phone">
+  <img src="screenshots/android.png" width="160" alt="Android app using the phone's colours, controls at the bottom">
 </p>
 
 ## Get it
