@@ -8,6 +8,8 @@
   const apply = (choice) => {
     if (choice === 'system') document.documentElement.removeAttribute('data-theme');
     else document.documentElement.setAttribute('data-theme', choice);
+    // The Android app colours its status bar icons to match.
+    if (window.AnagramApp) window.AnagramApp.postMessage(choice);
   };
   apply(read());
   addEventListener('DOMContentLoaded', () => {

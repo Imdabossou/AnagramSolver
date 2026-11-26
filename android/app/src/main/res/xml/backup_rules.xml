@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Only settings are worth backing up (theme, dictionary, sort, mode). -->
+<data-extraction-rules>
+    <cloud-backup>
+        <include domain="sharedpref" path="." />
+        <include domain="root" path="app_webview/Default/Local Storage/" />
+    </cloud-backup>
+    <device-transfer>
+        <include domain="sharedpref" path="." />
+        <include domain="root" path="app_webview/Default/Local Storage/" />
+    </device-transfer>
+</data-extraction-rules>

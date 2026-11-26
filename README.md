@@ -14,7 +14,8 @@ Type your letters and see every word you can make. No ads, no tracking, and it w
 - **Sort** by length, Scrabble score or A–Z
 - **Definitions**: tap a word to look it up on Wiktionary
 - **Two word lists**: Scrabble (ENABLE) or British English
-- **Works on phones**, in light or dark, and can be installed as an app
+- **Android app**: works offline with no internet permission, follows your phone's colours, and keeps the controls in thumb reach
+- **Works in any browser**, in light or dark, and can be installed as a web app
 
 <p>
   <img src="screenshots/desktop-filters.png" width="430" alt="Filters open, sorted by Scrabble score">
@@ -24,13 +25,8 @@ Type your letters and see every word you can make. No ads, no tracking, and it w
 
 ## Get it
 
-It's a static website, so host the files on any web server. To run it on your own computer with Docker:
-
-```sh
-docker compose up -d     # then open http://localhost:8090
-```
-
-An Android app is planned.
+- **Android**: download the APK from [Releases](https://github.com/Imdabossou/AnagramSolver/releases/latest). Needs Android 8 or newer. Select a word in any app and choose **Unscramble** to open it here.
+- **Web**: it's a static website, so host the files on any web server, or run it on your own computer with `docker compose up -d` (then open http://localhost:8090).
 
 ## Licence
 

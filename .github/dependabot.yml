@@ -1,4 +1,4 @@
-# Proposes updates to the pinned GitHub Actions once a month, against development.
+# Proposes updates to the pinned GitHub Actions and the Android dependencies once a month, against development.
 version: 2
 updates:
   - package-ecosystem: github-actions
@@ -8,4 +8,12 @@ updates:
       interval: monthly
     groups:
       actions:
+        patterns: ["*"]
+  - package-ecosystem: gradle
+    directory: /android
+    target-branch: development
+    schedule:
+      interval: monthly
+    groups:
+      android:
         patterns: ["*"]

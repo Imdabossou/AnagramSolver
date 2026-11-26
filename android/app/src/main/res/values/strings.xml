@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Anagram Solver</string>
+    <string name="process_text">Unscramble</string>
+    <string name="no_browser">No browser found to open the definition.</string>
+</resources>
